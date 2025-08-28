@@ -1,0 +1,521 @@
+/* ========== Base Reset & Page Layout ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  /* Background image */
+  background: url("https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&q=100&w=2560")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #1d1d1f;
+  position: relative;
+}
+
+/* Improved overlay for better contrast */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  z-index: -1;
+}
+
+/* ========== NAVIGATION BAR ========== */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 12px 24px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.nav-item:hover::before {
+  left: 100%;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  background: rgba(212, 175, 55, 0.2);
+  color: #d4af37;
+  box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.3);
+}
+
+/* Icon styling */
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  opacity: 0.8;
+}
+
+/* ========== SHIMMER KEYFRAMES ========== */
+@keyframes subtle-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@font-face {
+  font-family: "Qandile";
+  src: url("./Qandile/Qandile.otf") format("opentype"),
+    url("./Qandile/Qandile.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========== CLASSY VAGABOND TITLE ========== */
+#title {
+  font-family: "Qandile", serif;
+  font-size: 150px;
+  font-weight: 50;
+  margin-bottom: 1.5rem;
+  margin-top: 80px; /* Add space for fixed nav */
+  text-align: center;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+
+  /* Gold Base */
+  color: #6c5b24;
+
+  /* Shimmer Overlay */
+  background: linear-gradient(
+    90deg,
+    #c5bfa4 30%,
+    /* base gold */ #fff 50%,
+    /* white shine */ #e7c65d 70%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subtle-shimmer 7s linear infinite;
+
+  /* Glow */
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.633));
+}
+
+/* ========== CLASSY DESCRIPTION ========== */
+#description {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 20px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+
+  /* White Base */
+  color: #ffffff;
+
+  /* Shimmer Overlay */
+  background: linear-gradient(
+    90deg,
+    #fff 30%,
+    /* bright white */ #d4af37 50%,
+    /* golden shine */ #fff 70%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subtle-shimmer 4s linear infinite;
+
+  /* Glow */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+/* ========== SUBTLE SHIMMER ANIMATION ========== */
+@keyframes subtle-shimmer {
+  0%,
+  100% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+}
+
+/* ========== ENHANCED FORM STYLING ========== */
+#survey-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 700px;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  margin-top: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* FORM GLOW ON HOVER */
+#survey-form::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #d4af37, #b8860b, #d4af37);
+  border-radius: 26px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#survey-form:hover::before {
+  opacity: 0.2;
+}
+
+#survey-form:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2), 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+/* ========== FORM TITLE ========== */
+#survey-form h2 {
+  color: #1d1d1f;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1d1d1f, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fieldsets */
+fieldset {
+  border: none;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+legend {
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  color: #1d1d1f;
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+legend::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, #b8860b);
+  border-radius: 2px;
+}
+
+/* Labels & Inputs */
+label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  font-size: 0.95rem;
+}
+
+/* ========== ENHANCED INPUTS ========== */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  font-size: 1.1rem;
+  background: rgba(251, 251, 253, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15),
+    0 8px 25px rgba(212, 175, 55, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: #8e8e93;
+  font-style: italic;
+}
+
+/* Radio & Checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #d4af37;
+  margin-right: 0.7rem;
+  transform: scale(1.1);
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+fieldset label:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* Textarea */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* ========== ELEGANT SUBMIT BUTTON ========== */
+button#submit {
+  width: 100%;
+  padding: 1.4rem;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+
+  /* Elegant shadow */
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3),
+    0 0 15px rgba(212, 175, 55, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* BUTTON SHIMMER EFFECT */
+button#submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+button#submit:hover::before {
+  left: 100%;
+}
+
+button#submit:hover {
+  background: linear-gradient(135deg, #b8860b 0%, #9a7c0a 100%);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4),
+    0 0 25px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+button#submit:active {
+  transform: translateY(-1px) scale(1.005);
+}
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  nav {
+    top: 10px;
+    padding: 8px 16px;
+    border-radius: 25px;
+  }
+
+  .nav-container {
+    gap: 4px;
+  }
+
+  .nav-item {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .nav-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+
+  #title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    letter-spacing: 2px;
+    margin-top: 70px;
+  }
+
+  #description {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    letter-spacing: 2px;
+  }
+
+  #survey-form {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  legend {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 6px 12px;
+  }
+
+  .nav-item {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  #title {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-top: 60px;
+  }
+
+  #description {
+    font-size: 0.75rem;
+  }
+
+  #survey-form {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ========== ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+  #title,
+  #description,
+  button#submit::before,
+  .nav-item::before {
+    animation: none;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.nav-item:focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 2px;
+}

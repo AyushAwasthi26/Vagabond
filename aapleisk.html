@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagabond</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* Glowing V */
+    .logo {
+      font-size: 160px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff4500);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 3s infinite alternate;
+      margin-top: 60px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #ffff00;
+      }
+      to {
+        text-shadow: 0 0 30px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ff4500;
+      }
+    }
+
+    /* Vagabond shimmer */
+    .brand {
+      font-size: 48px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #fff, #00ffff, #fff);
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    /* Typing effect */
+    .subtitle {
+      font-size: 20px;
+      margin: 10px 0 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      to {
+        width: 20ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Form styling */
+    form {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      width: 90%;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #00ffff;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Glowing V -->
+  <div class="logo">V</div>
+
+  <!-- Brand shimmer -->
+  <div class="brand">Vagabond</div>
+
+  <!-- Typing effect -->
+  <p class="subtitle">Hello fellow vagabond</p>
+
+  <!-- Your form -->
+  <form id="survey-form">
+    <fieldset>
+      <legend>Tell us about yourself</legend>
+      <label id="name-label" for="name">Your Name:</label>
+      <input type="text" id="name" placeholder="ex. AYUSH AWASTHI" required>
+      
+      <label id="email-label" for="email">Email:</label>
+      <input type="email" id="email" placeholder="ex. ayush@gmail.com" required>
+      
+      <label id="number-label" for="number">Age:</label>
+      <input type="number" id="number" placeholder="21" min="10" max="120">
+    </fieldset>
+
+    <fieldset>
+      <legend>Where are you from?</legend>
+      <select id="dropdown" name="country">
+        <option value="">Select your country</option>
+        <option value="India" selected>India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Japan">Japan</option>
+        <option value="Other">Other</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>What do you enjoy doing?</legend>
+      <label><input type="radio" name="purpose" value="Exploring" checked> Exploring</label>
+      <label><input type="radio" name="purpose" value="Adventure"> Adventure</label>
+      <label><input type="radio" name="purpose" value="Relaxing"> Relaxing</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your plan?</legend>
+      <label><input type="checkbox" value="1" checked> One day</label>
+      <label><input type="checkbox" value="2"> Two days</label>
+      <label><input type="checkbox" value="3"> Three days</label>
+      <label><input type="checkbox" value="more"> More than three days</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your expectations</legend>
+      <textarea placeholder="Tell us more..."></textarea>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

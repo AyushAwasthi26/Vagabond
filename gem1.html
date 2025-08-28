@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="gemcss.css" />
+    <title>Vagabond</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1 id="title">VAGABOND</h1>
+    <p id="description">
+      Welcome, fellow vagabond, your journey with us begins here.<br />
+      Just a few quick steps to help us know you better.
+    </p>
+    <form id="survey-form" action="" method="post">
+      <fieldset>
+        <legend>Tell us about yourself</legend>
+        <label id="name-label" for="name">Your Name:</label>
+        <input
+          type="text"
+          placeholder="ex. AYUSH AWASTHI"
+          id="name"
+          name="name"
+          required
+        />
+        <label id="email-label" for="email">Email:</label>
+        <input
+          type="email"
+          placeholder="ex. ayushawasthi382@gmail.com"
+          id="email"
+          name="email"
+          required
+        />
+        <label id="number-label" for="number">Age:</label>
+        <input
+          type="number"
+          id="number"
+          name="number"
+          placeholder="21"
+          min="10"
+          max="120"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Where are you from?</legend>
+        <select id="dropdown" name="country">
+          <option value="">Select your country</option>
+          <option value="India" selected>India</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Japan">Japan</option>
+          <option value="Other">Other</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>What do you wanna do?</legend>
+        <label
+          ><input type="radio" name="Purpose" value="Exploring" checked />
+          Exploring</label
+        >
+        <label
+          ><input type="radio" name="Purpose" value="Adventure" />
+          Adventure</label
+        >
+        <label
+          ><input type="radio" name="Purpose" value="Relaxing" /> Relaxing</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Your plan?</legend>
+        <h2>Number of days?</h2>
+        <label
+          ><input
+            type="checkbox"
+            id="one-day"
+            name="days"
+            value="1"
+            checked
+          />
+          One day</label
+        >
+        <label
+          ><input type="checkbox" id="two-days" name="days" value="2" /> Two
+          days</label
+        >
+        <label
+          ><input type="checkbox" id="three-days" name="days" value="3" /> Three
+          days</label
+        >
+        <label
+          ><input type="checkbox" id="more-days" name="days" value="more" /> More
+          than three days</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Your expectations</legend>
+        <label for="comments">Comments:</label><br />
+        <textarea
+          id="comments"
+          name="comments"
+          placeholder="Tell us more about your expectations from this trip"
+        ></textarea>
+      </fieldset>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>

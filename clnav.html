@@ -17,23 +17,23 @@
   <body>
     <nav>
       <div class="nav-container">
-        <a href="#" class="nav-item active">
+        <a href="/landing.html" class="nav-item">
           <span class="nav-icon"><i class="fas fa-home"></i></span>
           Home
         </a>
-        <a href="#" class="nav-item">
+        <a href="destination.html" class="nav-item">
           <span class="nav-icon"><i class="fas fa-map-marked-alt"></i></span>
           Destinations
         </a>
-        <a href="#" class="nav-item">
+        <a href="/clnav.html" class="nav-item active">
           <span class="nav-icon"><i class="fas fa-plane"></i></span>
-          Travel
+          Start
         </a>
-        <a href="#" class="nav-item">
+        <a href="/gallery.html" class="nav-item">
           <span class="nav-icon"><i class="fas fa-images"></i></span>
           Gallery
         </a>
-        <a href="#" class="nav-item">
+        <a href="/contact.html" class="nav-item">
           <span class="nav-icon"><i class="fas fa-envelope"></i></span>
           Contact Us
         </a>
@@ -90,19 +90,39 @@
       </fieldset>
 
       <fieldset>
-        <legend>What do you wanna do?</legend>
+        <legend>What is your travel style?</legend>
         <label
-          ><input type="radio" name="Purpose" value="Exploring" checked />
-          Exploring</label
+          ><input type="radio" name="travel-style" value="luxury" />
+          Luxury</label>
+        <label
+          ><input type="radio" name="travel-style" value="budget" />
+          Budget-Friendly</label
         >
         <label
-          ><input type="radio" name="Purpose" value="Adventure" />
-          Adventure</label
+          ><input type="radio" name="travel-style" value="backpacking" />
+          Backpacking</label
         >
-        <label
-          ><input type="radio" name="Purpose" value="Relaxing" />
-          Relaxing</label
-        >
+      </fieldset>
+
+      <fieldset>
+        <legend>What is your budget per person?</legend>
+        <select id="budget" name="budget">
+          <option value="">-- Select a budget --</option>
+          <option value="low">Under $500</option>
+          <option value="medium">$500 - $2000</option>
+          <option value="high">$2000 - $5000</option>
+          <option value="luxury">Over $5000</option>
+        </select>
+      </fieldset>
+      
+      <fieldset>
+        <legend>What are you interested in?</legend>
+        <label><input type="checkbox" name="activities" value="adventure" /> Adventure</label>
+        <label><input type="checkbox" name="activities" value="history" /> History</label>
+        <label><input type="checkbox" name="activities" value="relaxing" /> Relaxing</label>
+        <label><input type="checkbox" name="activities" value="culture" /> Culture</label>
+        <label><input type="checkbox" name="activities" value="food" /> Food & Culinary</label>
+        <label><input type="checkbox" name="activities" value="nature" /> Nature & Wildlife</label>
       </fieldset>
 
       <fieldset>

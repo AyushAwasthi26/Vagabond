@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/output.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+    <title>Document</title>
+  </head>
+  <body class="bg-black text-white">
+    <nav>
+      <div class="nav-container">
+        <a href="/landing.html" class="nav-item active">
+          <span class="nav-icon"><i class="fas fa-home"></i></span>
+          Home
+        </a>
+        <a href="destination.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-map-marked-alt"></i></span>
+          Destinations
+        </a>
+        <a href="/clnav.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-plane"></i></span>
+          Start
+        </a>
+        <a href="/gallery.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-images"></i></span>
+          Gallery
+        </a>
+        <a href="/contact.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+          Contact Us
+        </a>
+      </div>
+    </nav>
+
+    <div
+      class="h-screen w-full bg-[url('home-b.jpg')] bg-cover bg-no-repeat bg-center bg-fixed relative flex flex-col justify-center items-center"
+    ><div class="absolute inset-0 bg-black opacity-20"></div>
+      <div class="text-white text-center">
+        <h1 id="title">Vagabond</h1>
+        <p
+          class="hidden xl:block text-3xl font-serif relative top-[-70px] right-[-200px] text-amber-200"
+        >
+          The World is yours to EXPLORE!
+        </p>
+      </div>
+      <a href="/form-page.html" class="bg-[#efba0df9] py-3 px-8 rounded-full shadow-xl hover:bg-yellow-100 transition-colors duration-300 relative overflow-hidden group font-[Poppins] text-sm md:text-xl font-semibold text-black">
+        Get Started
+        <span class="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent animate-shimmer"></span>
+      </a>
+    </div>
+    <!-- Top 10 Countries Carousel Section -->
+    <section class="py-16 bg-black text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-[Qandile] font-medium text-[#efba0df9] text-center mb-8">Top 10 Countries to Visit</h2>
+        
+        <div class="flex overflow-x-scroll snap-x snap-mandatory space-x-8 pb-12 hide-scrollbar pt-10">
+          
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/japan.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Japan</h3>
+              <p class="text-sm text-gray-300">A blend of ancient traditions and modern cityscapes. From serene temples to vibrant neon-lit streets.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/fr.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">France</h3>
+              <p class="text-sm text-gray-300">Famous for its romantic cities, exquisite cuisine, and world-class art and culture.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/it.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Italy</h3>
+              <p class="text-sm text-gray-300">Home to ancient ruins, Renaissance art, and stunning coastlines. The cradle of Western culture.</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/br.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Brazil</h3>
+              <p class="text-sm text-gray-300">Experience the vibrant rhythms of samba, the lush Amazon rainforest, and the iconic Christ the Redeemer.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/eg.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Egypt</h3>
+              <p class="text-sm text-gray-300">Uncover the mysteries of ancient civilizations, from the Pyramids of Giza to the temples of Luxor.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/ic.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Iceland</h3>
+              <p class="text-sm text-gray-300">A land of fire and ice, with breathtaking landscapes of glaciers, volcanoes, and the Northern Lights.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/nz.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">New Zealand</h3>
+              <p class="text-sm text-gray-300">A paradise for adventurers with majestic mountains, deep fjords, and a rich Maori culture.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/in.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">India</h3>
+              <p class="text-sm text-gray-300">A land of diverse landscapes and cultures, from the Himalayas to the golden Thar desert.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/esp.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Spain</h3>
+              <p class="text-sm text-gray-300">Home to the ancient wonders of the Alhambra and the vibrant energy of flamenco, a journey into rich history and passionate culture./p>
+            </div>
+          </div>
+
+          <div class="carousel-item group flex-none w-80 h-[450px] relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+            <div class="absolute inset-0 bg-[url('./top-10/aus.jpg')] bg-cover bg-center transition-transform duration-500 ease-in-out"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Australia</h3>
+              <p class="text-sm text-gray-300">Explore the vibrant coastal cities, the vast outback, and the unique wildlife of this incredible continent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Faq section -->
+    <section class="py-16 bg-black text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-medium text-[#efba0df9] text-center mb-12 font-[Qandile]">
+          Frequently Asked Questions
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="border-b border-gray-700 py-6 cursor-pointer faq-item hover:bg-gray-800 transition-colors duration-300 rounded-lg">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold text-white">
+                What exactly is Vagabond, and how does it work?
+              </h3>
+              <span class="text-white text-2xl transform transition-transform duration-300 rotate-0">
+                +
+              </span>
+            </div>
+            <div class="faq-content mt-2 text-gray-400 hidden">
+              Vagabond is your personal travel compass, not just a booking site. We use cutting-edge data analysis to understand your unique travel style, interests, and preferences. By processing this information, we provide personalized recommendations and craft the perfect journey for you. Instead of endless searching, we suggest the best destination and itinerary for your next adventure—at this very moment.
+            </div>
+          </div>
+
+          <div class="border-b border-gray-700 py-6 cursor-pointer faq-item hover:bg-gray-800 transition-colors duration-300 rounded-lg">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold text-white">
+                Is Vagabond free to use?
+              </h3>
+              <span class="text-white text-2xl transform transition-transform duration-300 rotate-0">
+                +
+              </span>
+            </div>
+            <div class="faq-content mt-2 text-gray-400 hidden">
+              The core recommendation service—our personalized itinerary and destination suggestions—is completely free to use. You only pay when you decide to book a trip or package directly through our partners. This ensures you can explore your options and find the perfect trip without any upfront commitment.
+            </div>
+          </div>
+
+          <div class="border-b border-gray-700 py-6 cursor-pointer faq-item hover:bg-gray-800 transition-colors duration-300 rounded-lg">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold text-white">
+                How does the recommendation system work its magic?
+              </h3>
+              <span class="text-white text-2xl transform transition-transform duration-300 rotate-0">
+                +
+              </span>
+            </div>
+            <div class="faq-content mt-2 text-gray-400 hidden">
+              Our "magic" is a powerful blend of data and intelligence. When you provide us with your travel interests, budget, and desired trip length, our proprietary algorithm processes thousands of data points on destinations, flights, hotels, and activities. We cross-reference this with real-time availability and trending traveler preferences to generate a recommendation that is both unique to you and logistically perfect.
+            </div>
+          </div>
+
+          <div class="border-b border-gray-700 py-6 cursor-pointer faq-item hover:bg-gray-800 transition-colors duration-300 rounded-lg">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold text-white">
+                What kind of trips can Vagabond suggest?
+              </h3>
+              <span class="text-white text-2xl transform transition-transform duration-300 rotate-0">
+                +
+              </span>
+            </div>
+            <div class="faq-content mt-2 text-gray-400 hidden">
+              Vagabond can recommend a wide range of travel experiences. Whether you're looking for a relaxing beach getaway, a thrilling mountain adventure, a deep dive into historical cities, or a unique culinary tour, our system is designed to find a match. From solo backpacking trips to luxury family vacations, we cater to every type of traveler.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-950 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
+
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left font-[Poppins]">
+                    <h3 class="text-3xl font-bold text-[#efba0df9] mb-2 font-[Qandile]">Vagabond</h3>
+                    <p class="text-sm text-gray-400 mb-4">The World is yours to <a href="/clnav.html" class="text-amber-100">Explore</a>.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/ayush-awasthi-dev/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/otakuayush/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://x.com/otakuayush_" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://github.com/AyushAwasthi26" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 text-center md:text-left">
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200 font-[Poppins]">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Travel Packages</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex-1 text-center md:text-left">
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200 font-[Poppins]">Get in Touch</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>Panki, Kanpur Nagar, 208020</p>
+                        <p><i class="fas fa-envelope mr-2 text-gray-500"></i>ayushawasthi382@gmail.com</p>
+                        <p><i class="fas fa-phone-alt mr-2 text-gray-500"></i>+91 75182 39341</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-amber-100">&copy; 2025 Vagabond. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-content');
+            const icon = item.querySelector('span');
+
+            // Toggle the 'hidden' class on the answer
+            answer.classList.toggle('hidden');
+            
+            // Rotate the plus/minus icon
+            if (icon.textContent.includes('+')) {
+              icon.textContent = '-';
+              icon.classList.add('rotate-180');
+            } else {
+              icon.textContent = '+';
+              icon.classList.remove('rotate-180');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

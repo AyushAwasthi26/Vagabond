@@ -18,7 +18,7 @@ A personalized travel recommendation platform that takes the stress out of plann
 - [📜 License](#-license)
 
 
-📸 Screenshots:
+## 📸 Screenshots:
 
 <img width="1899" height="1079" alt="Screenshot 2025-09-04 212537" src="https://github.com/user-attachments/assets/eb639836-db12-439f-a6ec-c8d764915d0f" />
 <img width="1895" height="1079" alt="Screenshot 2025-09-04 212559" src="https://github.com/user-attachments/assets/b3cc9198-8879-421e-8a15-a080752421f2" />
@@ -32,7 +32,7 @@ A personalized travel recommendation platform that takes the stress out of plann
 <img width="1900" height="1078" alt="Screenshot 2025-09-04 212821" src="https://github.com/user-attachments/assets/06f004fd-27d0-4191-b26e-03ae25c2818f" />
 
 
-🌟 About the Project:
+## 🌟 About the Project:
 
 Vagabond is built on the belief that travel should be personal and inspiring. Our core mission is to replace endless research and generic travel guides with a tailored recommendation system.
 
@@ -46,7 +46,7 @@ We give you the perfect match: The platform delivers a curated list of top desti
 
 The project is designed as a Single-Page Application (SPA), ensuring a seamless and fluid user experience that feels fast and responsive.
 
-✨ Features:
+## ✨ Features:
 
 Personalized Recommendations: Get travel suggestions based on your budget, travel style, and interests.
 
@@ -58,7 +58,7 @@ Interactive Review Section: Read testimonials from other happy travelers and lea
 
 Comprehensive About Us: Meet the passionate team behind the project and learn about our mission.
 
-💻 Tech Stack:
+## 💻 Tech Stack:
 
 Frontend: HTML5, CSS3
 
@@ -68,7 +68,7 @@ Styling: A custom aesthetic with the 'Qandile' and 'Poppins' fonts.
 
 Backend: Node.js (or similar, for ML model processing)
 
-🚀 Getting Started:
+## 🚀 Getting Started:
 
 To get a copy of Vagabond up and running on your local machine, follow these simple steps.
 
@@ -116,7 +116,7 @@ git push origin main
 
 (Note: Replace main with the name of your branch if you are working on a different one).
 
-👥 Project Team:
+## 👥 Project Team:
 
 We are a passionate team of third-year B.Tech students who came together with a shared vision for travel.
 
@@ -144,7 +144,7 @@ Anubhav Singh Chauhan [Backend Developer]
 
 My focus is on creating a robust and reliable backend that ensures our platform runs efficiently for a flawless user experience.
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 [🔝 Back to Top](#-table-of-contents)

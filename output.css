@@ -305,56 +305,17 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
   .h-24 {
     height: calc(var(--spacing) * 24);
-  }
-  .h-80 {
-    height: calc(var(--spacing) * 80);
   }
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
-  .h-100 {
-    height: calc(var(--spacing) * 100);
-  }
-  .h-110 {
-    height: calc(var(--spacing) * 110);
-  }
-  .h-\[0px\] {
-    height: 0px;
-  }
-  .h-\[00px\] {
-    height: 00px;
-  }
-  .h-\[30vh\] {
-    height: 30vh;
-  }
-  .h-\[80px\] {
-    height: 80px;
-  }
-  .h-\[100px\] {
-    height: 100px;
-  }
-  .h-\[400px\] {
-    height: 400px;
-  }
   .h-\[450px\] {
     height: 450px;
   }
-  .h-\[500px\] {
-    height: 500px;
-  }
-  .h-\[800px\] {
-    height: 800px;
-  }
   .h-\[900px\] {
     height: 900px;
-  }
-  .h-\[1000px\] {
-    height: 1000px;
   }
   .h-full {
     height: 100%;
@@ -509,27 +470,6 @@
   .bg-\[\#efba0df9\] {
     background-color: #efba0df9;
   }
-  .bg-\[r\] {
-    background-color: r;
-  }
-  .bg-\[rgba\(255\,255\,255\,\)\] {
-    background-color: rgba(255,255,255,);
-  }
-  .bg-\[rgba\(255\,255\,255\,0\.1\)\] {
-    background-color: rgba(255,255,255,0.1);
-  }
-  .bg-\[rgba\(255\,255\,255\,1\)\] {
-    background-color: rgba(255,255,255,1);
-  }
-  .bg-\[rgba\] {
-    background-color: rgba;
-  }
-  .bg-\[url\] {
-    background-color: url;
-  }
-  .bg-amber-100 {
-    background-color: var(--color-amber-100);
-  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -580,35 +520,17 @@
   .bg-\[url\(\'\/d-bg\.jpg\'\)\] {
     background-image: url('/d-bg.jpg');
   }
-  .bg-\[url\(\'ab\'\)\] {
-    background-image: url('ab');
-  }
-  .bg-\[url\(\'ab-bg\.jpg\'\)\] {
-    background-image: url('ab-bg.jpg');
-  }
   .bg-\[url\(\'ab-bg2\.jpg\'\)\] {
     background-image: url('ab-bg2.jpg');
   }
   .bg-\[url\(\'home-b\.jpg\'\)\] {
     background-image: url('home-b.jpg');
   }
-  .bg-\[url\(\'https\:\/\/placehold\.co\/1920x400\/000000\/FFFFFF\?text\=About\+Us\'\)\] {
-    background-image: url('https://placehold.co/1920x400/000000/FFFFFF?text=About+Us');
-  }
   .bg-\[url\(\'r-bg\.jpg\'\)\] {
     background-image: url('r-bg.jpg');
   }
   .bg-\[url\(\)\] {
     background-image: url();
-  }
-  .bg-\[url\(\/wall\)\] {
-    background-image: url(/wall);
-  }
-  .bg-\[url\(\/wall-bg\.\)\] {
-    background-image: url(/wall-bg.);
-  }
-  .bg-\[url\(\/wall-bg\.jpg\)\] {
-    background-image: url(/wall-bg.jpg);
   }
   .bg-\[url\(\/wr-bg\.jpg\)\] {
     background-image: url(/wr-bg.jpg);
@@ -681,9 +603,6 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
-  .p-40 {
-    padding: calc(var(--spacing) * 40);
-  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
@@ -702,11 +621,8 @@
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-5 {
-    padding-top: calc(var(--spacing) * 5);
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
   }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
@@ -714,53 +630,17 @@
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
+  .pt-12 {
+    padding-top: calc(var(--spacing) * 12);
+  }
   .pt-24 {
     padding-top: calc(var(--spacing) * 24);
-  }
-  .pt-40 {
-    padding-top: calc(var(--spacing) * 40);
-  }
-  .pt-80 {
-    padding-top: calc(var(--spacing) * 80);
-  }
-  .pt-800 {
-    padding-top: calc(var(--spacing) * 800);
-  }
-  .pt-\[-100px\] {
-    padding-top: -100px;
-  }
-  .pt-\[-1000px\] {
-    padding-top: -1000px;
-  }
-  .pt-\[0px\] {
-    padding-top: 0px;
-  }
-  .pt-\[20\] {
-    padding-top: 20;
-  }
-  .pt-\[200\] {
-    padding-top: 200;
-  }
-  .pt-\[200px\] {
-    padding-top: 200px;
-  }
-  .pt-\[px\] {
-    padding-top: px;
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
   }
-  .pb-10 {
-    padding-bottom: calc(var(--spacing) * 10);
-  }
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
-  }
-  .pb-20 {
-    padding-bottom: calc(var(--spacing) * 20);
-  }
-  .pb-60 {
-    padding-bottom: calc(var(--spacing) * 60);
   }
   .text-center {
     text-align: center;
@@ -799,14 +679,6 @@
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
-  .text-6xl {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
-  }
-  .text-8xl {
-    font-size: var(--text-8xl);
-    line-height: var(--tw-leading, var(--text-8xl--line-height));
-  }
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -818,15 +690,6 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-\[40px\] {
-    font-size: 40px;
-  }
-  .text-\[400em\] {
-    font-size: 400em;
-  }
-  .text-\[400px\] {
-    font-size: 400px;
   }
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
@@ -844,15 +707,6 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-\[\#\#7DA2D7\] {
-    color: ##7DA2D7;
-  }
-  .text-\[\#7DA2D7\] {
-    color: #7DA2D7;
-  }
-  .text-\[\#7da6de\] {
-    color: #7da6de;
-  }
   .text-\[\#75a1df\] {
     color: #75a1df;
   }
@@ -862,20 +716,11 @@
   .text-\[\#efba0df9\] {
     color: #efba0df9;
   }
-  .text-\[40\] {
-    color: 40;
-  }
-  .text-\[400\] {
-    color: 400;
-  }
   .text-amber-100 {
     color: var(--color-amber-100);
   }
   .text-amber-200 {
     color: var(--color-amber-200);
-  }
-  .text-amber-400 {
-    color: var(--color-amber-400);
   }
   .text-black {
     color: var(--color-black);
@@ -1140,21 +985,6 @@
     @media (width >= 48rem) {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-  .md\:text-\[40px\] {
-    @media (width >= 48rem) {
-      font-size: 40px;
-    }
-  }
-  .md\:text-\[90px\] {
-    @media (width >= 48rem) {
-      font-size: 90px;
-    }
-  }
-  .md\:text-\[400px\] {
-    @media (width >= 48rem) {
-      font-size: 400px;
     }
   }
   .lg\:grid-cols-3 {

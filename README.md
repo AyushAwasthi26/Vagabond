@@ -1,5 +1,4 @@
-Vagabond: Your Personal Travel Compass 🧭
-"The World is yours to EXPLORE!"
+VAGABOND: The World is yours to EXPLORE!
 
 A personalized travel recommendation platform that takes the stress out of planning and turns your wanderlust into reality. Vagabond uses intelligent algorithms to match you with the perfect destinations, adventures, and itineraries based on your unique preferences.
 
@@ -8,7 +7,7 @@ A personalized travel recommendation platform that takes the stress out of plann
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 
-📋 Table of Contents
+📋 Table of Contents:
 
 - [📸 Screenshots](#-screenshots)
 - [🌟 About the Project](#-about-the-project)
@@ -33,7 +32,8 @@ A personalized travel recommendation platform that takes the stress out of plann
 <img width="1900" height="1078" alt="Screenshot 2025-09-04 212821" src="https://github.com/user-attachments/assets/06f004fd-27d0-4191-b26e-03ae25c2818f" />
 
 
-🌟 About the Project
+🌟 About the Project:
+
 Vagabond is built on the belief that travel should be personal and inspiring. Our core mission is to replace endless research and generic travel guides with a tailored recommendation system.
 
 Here's how it works:
@@ -46,7 +46,8 @@ We give you the perfect match: The platform delivers a curated list of top desti
 
 The project is designed as a Single-Page Application (SPA), ensuring a seamless and fluid user experience that feels fast and responsive.
 
-✨ Features
+✨ Features:
+
 Personalized Recommendations: Get travel suggestions based on your budget, travel style, and interests.
 
 Elegant & Responsive UI: A clean, visually stunning interface designed with a custom theme to be beautiful on any device.
@@ -57,7 +58,8 @@ Interactive Review Section: Read testimonials from other happy travelers and lea
 
 Comprehensive About Us: Meet the passionate team behind the project and learn about our mission.
 
-💻 Tech Stack
+💻 Tech Stack:
+
 Frontend: HTML5, CSS3
 
 Frameworks & Libraries: Tailwind CSS, Font Awesome
@@ -66,13 +68,15 @@ Styling: A custom aesthetic with the 'Qandile' and 'Poppins' fonts.
 
 Backend: Node.js (or similar, for ML model processing)
 
-🚀 Getting Started
+🚀 Getting Started:
+
 To get a copy of Vagabond up and running on your local machine, follow these simple steps.
 
 Prerequisites
 You'll need a package manager like npm or yarn installed on your machine. Ensure Git is also installed.
 
-Installation
+Installation:
+
 Clone the repository to your local machine:
 
 git clone [https://github.com/AyushAwasthi26/VAGABOND.git](https://github.com/AyushAwasthi26/VAGABOND.git)
@@ -94,7 +98,8 @@ This command will automatically rebuild your CSS whenever you make changes to yo
 
 Open index.html in your browser to view the project.
 
-Contributing
+Contributing:
+
 To contribute to the project, make your changes and then follow these Git commands:
 
 Stage your changes:
@@ -111,42 +116,31 @@ git push origin main
 
 (Note: Replace main with the name of your branch if you are working on a different one).
 
-👥 Project Team
+👥 Project Team:
+
 We are a passionate team of third-year B.Tech students who came together with a shared vision for travel.
 
-Role
-
-Name
-
-Contribution
-
-UI&UX & Frontend Developer
-
-Ayush Awasthi
+-->Ayush Awasthi [UI&UX & Frontend Developer]
 
 I sculpt the digital canvas of Vagabond, crafting the elegant and seamless user experience that serves as the heart of our platform's visual identity.
 
-ML + Backend Developer
 
-Atharva Dubey
+
+-->Atharva Dubey[ML + Backend Developer]
 
 The architect of our recommendation engine, focused on building the intelligent backend systems that deliver personalized results.
 
-ML Engineer
 
-Ashish Shukla
+-->Ashish Shukla [ML Engineer]
 
 Responsible for fine-tuning the machine learning models to ensure our recommendations are always accurate and truly unique.
 
-Frontend Developer
 
-Anushka Srivastava
+Anushka Srivastava [Frontend Developer]
 
 Dedicated to translating our vision into a beautiful, intuitive, and responsive interface that inspires every user to explore.
 
-Backend Developer
-
-Anubhav
+Anubhav Singh Chauhan [Backend Developer]
 
 My focus is on creating a robust and reliable backend that ensures our platform runs efficiently for a flawless user experience.
 

@@ -1,517 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Destinations</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="/output.css" />
     <style>
-        /* General body and font styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
-        
-        /* Font faces from your provided files */
-        @font-face {
-            font-family: "Qandile";
-            src: url("./Qandile/Qandile.otf") format("opentype"),
-                 url("./Qandile/Qandile.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-        }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
+      /* General body and font styles */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
 
-        /* Nav Bar from your provided files */
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 12px 24px;
-            z-index: 1000;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+      /* Font faces from your provided files */
+      @font-face {
+        font-family: "Qandile";
+        src: url("./Qandile/Qandile.otf") format("opentype"),
+          url("./Qandile/Qandile.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Nav Bar from your provided files */
+      nav {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        padding: 12px 24px;
+        z-index: 1000;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+      nav:hover {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 25px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .nav-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+      .nav-item:hover::before {
+        left: 100%;
+      }
+      .nav-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      }
+      .nav-item.active {
+        background: rgba(212, 175, 55, 0.2);
+        color: #d4af37;
+        box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.3);
+      }
+      .nav-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        opacity: 0.8;
+      }
+
+      /* Shimmer Keyframes from your provided files */
+      @keyframes subtle-shimmer {
+        0% {
+          background-position: -200% 0;
         }
-        nav:hover {
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        100% {
+          background-position: 200% 0;
         }
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .nav-item {
-            display: flex;
-            align-items: center;
-            padding: 8px 16px;
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 25px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .nav-item::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.1),
-                transparent
-            );
-            transition: left 0.6s;
-        }
-        .nav-item:hover::before {
-            left: 100%;
-        }
-        .nav-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: #fff;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-        }
-        .nav-item.active {
-            background: rgba(212, 175, 55, 0.2);
-            color: #d4af37;
-            box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.3);
-        }
-        .nav-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 6px;
-            opacity: 0.8;
-        }
-        
-        /* Shimmer Keyframes from your provided files */
-        @keyframes subtle-shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
+      }
     </style>
-</head>
-<body class="bg-black text-white">
-
+  </head>
+  <body class="bg-black text-white">
     <!-- Navigation Bar -->
     <nav>
-        <div class="nav-container">
-            <a href="/landing.html" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-home"></i></span>
-                Home
-            </a>
-            <a href="/destination.html" class="nav-item active">
-                <span class="nav-icon"><i class="fas fa-map-marked-alt"></i></span>
-                Destinations
-            </a>
-            <a href="/clnav.html" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-plane"></i></span>
-                Start
-            </a>
-            <a href="/gallery.html" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-images"></i></span>
-                Gallery
-            </a>
-            <a href="/contact.html" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-envelope"></i></span>
-                Contact Us
-            </a>
-        </div>
+      <div class="nav-container">
+        <a href="/landing.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-home"></i></span>
+          Home
+        </a>
+        <a href="/destination.html" class="nav-item active">
+          <span class="nav-icon"><i class="fas fa-map-marked-alt"></i></span>
+          Destinations
+        </a>
+        <a href="/clnav.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-plane"></i></span>
+          Start
+        </a>
+        <a href="/reviews.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-star"></i></span>
+          Reviews
+        </a>
+        <a href="/contact.html" class="nav-item">
+          <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+          About Us
+        </a>
+      </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <div class="h-96 w-full bg-[url('/d-bg.jpg')] bg-cover bg-top relative flex items-center justify-center pt-24">
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="text-white text-center z-10">
-            <h1 class="text-4xl md:text-6xl font-medium font-['Qandile'] text-[#efba0df9] filter drop-shadow-md">
-                Top Places to Visit
-            </h1>
-            <p class="text-lg md:text-2xl text-gray-300 mt-2 font-poppins">
-                Discover the world's most popular places
-            </p>
-        </div>
+    <div
+      class="h-96 w-full bg-[url('/d-bg.jpg')] bg-cover bg-top relative flex items-center justify-center pt-24"
+    >
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="text-white text-center z-10">
+        <h1
+          class="text-4xl md:text-6xl font-medium font-['Qandile'] text-[#efba0df9] filter drop-shadow-md"
+        >
+          Top Places to Visit
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-300 mt-2 font-poppins">
+          Discover the world's most popular places
+        </p>
+      </div>
     </div>
 
     <!-- Destinations Grid Section -->
     <section class="py-16 bg-black text-white font-[Qandile]">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Card 1 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/paris.avif" alt="Paris" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Paris, France</h3>
-                        <p class="text-sm text-gray-300">The city of lights, known for its romantic ambiance, iconic landmarks, and world-class cuisine.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/london.avif" alt="London" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">London, UK</h3>
-                        <p class="text-sm text-gray-300">A vibrant metropolis rich with history, art, and a royal heritage that captivates every visitor.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/tokyo.avif" alt="Tokyo" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Tokyo, Japan</h3>
-                        <p class="text-sm text-gray-300">A dazzling city where ancient tradition meets futuristic technology in a unique blend of culture.</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/rome.avif" alt="Rome" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Rome, Italy</h3>
-                        <p class="text-sm text-gray-300">The Eternal City, an open-air museum filled with ancient ruins, masterful art, and delicious food.</p>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/dubai.avif" alt="Dubai" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Dubai, UAE</h3>
-                        <p class="text-sm text-gray-300">A futuristic desert oasis known for its luxury shopping, stunning architecture, and vibrant nightlife.</p>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/newyork.avif" alt="New York" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">New York, USA</h3>
-                        <p class="text-sm text-gray-300">The city that never sleeps, offering iconic landmarks, diverse cultures, and endless entertainment.</p>
-                    </div>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/istanbul.avif" alt="Istanbul" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Istanbul, Turkey</h3>
-                        <p class="text-sm text-gray-300">Where East meets West, a city rich with history, magnificent mosques, and bustling markets.</p>
-                    </div>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/barca.avif" alt="Barcelona" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Barcelona, Spain</h3>
-                        <p class="text-sm text-gray-300">A vibrant city of stunning Gaudi architecture, delicious tapas, and lively street life.</p>
-                    </div>
-                </div>
-
-                <!-- Card 9 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/singapore.avif" alt="Singapore" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Singapore</h3>
-                        <p class="text-sm text-gray-300">A futuristic cityscape and lush gardens, combining modern innovation with rich multicultural heritage.</p>
-                    </div>
-                </div>
-
-                <!-- Card 10 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/hong.avif" alt="Hong Kong" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Hong Kong</h3>
-                        <p class="text-sm text-gray-300">A vibrant hub where towering skyscrapers meet lush, green mountains and ancient traditions.</p>
-                    </div>
-                </div>
-
-                <!-- Card 11 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/amsterdam.avif" alt="Amsterdam" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Amsterdam, Netherlands</h3>
-                        <p class="text-sm text-gray-300">A charming city of picturesque canals, historic houses, and world-class art museums.</p>
-                    </div>
-                </div>
-
-                <!-- Card 12 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/sydney.avif" alt="Sydney" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Sydney, Australia</h3>
-                        <p class="text-sm text-gray-300">A sun-drenched city with iconic harbor views, stunning beaches, and a relaxed, outdoor lifestyle.</p>
-                    </div>
-                </div>
-
-                <!-- Card 13 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/bangkok.avif" alt="Bangkok" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Bangkok, Thailand</h3>
-                        <p class="text-sm text-gray-300">A city of dazzling temples, bustling street life, and vibrant floating markets.</p>
-                    </div>
-                </div>
-
-                <!-- Card 14 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/seoul.avif" alt="Seoul" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Seoul, South Korea</h3>
-                        <p class="text-sm text-gray-300">A dynamic city where ancient palaces and temples stand alongside high-tech urban design.</p>
-                    </div>
-                </div>
-
-                <!-- Card 15 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/buenos.avif" alt="Buenos Aires" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Buenos Aires, Argentina</h3>
-                        <p class="text-sm text-gray-300">A city with a passionate soul, famous for its tango rhythms, colorful neighborhoods, and European flair.</p>
-                    </div>
-                </div>
-
-                <!-- Card 16 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/rio.avif" alt="Rio de Janeiro" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Rio de Janeiro, Brazil</h3>
-                        <p class="text-sm text-gray-300">Home to world-famous beaches, vibrant carnival celebrations, and the iconic Christ the Redeemer statue.</p>
-                    </div>
-                </div>
-
-                <!-- Card 17 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/cairo.avif" alt="Cairo" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Cairo, Egypt</h3>
-                        <p class="text-sm text-gray-300">A city of ancient wonders, where the bustling modern life sits alongside the timeless Sphinx and Pyramids.</p>
-                    </div>
-                </div>
-
-                <!-- Card 18 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/venice.avif" alt="Venice" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Venice, Italy</h3>
-                        <p class="text-sm text-gray-300">A breathtaking city built on water, famous for its romantic canals, grand palaces, and enchanting gondola rides.</p>
-                    </div>
-                </div>
-
-                <!-- Card 19 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/kyoto.avif" alt="Kyoto" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Kyoto, Japan</h3>
-                        <p class="text-sm text-gray-300">Japan's cultural heart, with ancient temples, serene gardens, and traditional geishas.</p>
-                    </div>
-                </div>
-
-                <!-- Card 20 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/prague.avif" alt="Prague" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Prague, Czech Republic</h3>
-                        <p class="text-sm text-gray-300">A city of fairy-tale castles, charming bridges, and a rich history that unfolds on every cobblestone street.</p>
-                    </div>
-                </div>
-
-                <!-- Card 21 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/vienna.avif" alt="Vienna" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Vienna, Austria</h3>
-                        <p class="text-sm text-gray-300">A city of imperial grandeur, classical music, and magnificent palaces.</p>
-                    </div>
-                </div>
-
-                <!-- Card 22 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/athens.avif" alt="Athens" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Athens, Greece</h3>
-                        <p class="text-sm text-gray-300">The cradle of Western civilization, with ancient monuments and a bustling modern life.</p>
-                    </div>
-                </div>
-
-                <!-- Card 23 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/mexico.avif" alt="Mexico City" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Mexico City, Mexico</h3>
-                        <p class="text-sm text-gray-300">A vibrant megalopolis full of historical depth, incredible art, and delicious street food.</p>
-                    </div>
-                </div>
-
-                <!-- Card 24 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/lisbon.avif" alt="Lisbon" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Lisbon, Portugal</h3>
-                        <p class="text-sm text-gray-300">A coastal city with a mix of old-world charm, modern culture, and stunning views.</p>
-                    </div>
-                </div>
-
-                <!-- Card 25 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/marakesh.avif" alt="Marrakesh" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Marrakesh, Morocco</h3>
-                        <p class="text-sm text-gray-300">A city of vibrant souks, serene riads, and a rich tapestry of colors and sounds.</p>
-                    </div>
-                </div>
-
-                <!-- Card 26 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/cape.avif" alt="Cape Town" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Cape Town, South Africa</h3>
-                        <p class="text-sm text-gray-300">A stunning coastal city set against the backdrop of majestic Table Mountain.</p>
-                    </div>
-                </div>
-
-                <!-- Card 27 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/macchu.avif" alt="Machu Picchu" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Machu Picchu, Peru</h3>
-                        <p class="text-sm text-gray-300">The ancient Inca citadel nestled high in the Andes Mountains, a true wonder of the world.</p>
-                    </div>
-                </div>
-
-                <!-- Card 28 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/bali.avif" alt="Bali" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Bali, Indonesia</h3>
-                        <p class="text-sm text-gray-300">A tropical paradise known for its volcanic mountains, iconic rice paddies, beaches, and coral reefs.</p>
-                    </div>
-                </div>
-
-                <!-- Card 29 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/rey.avif" alt="Reykjavik" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Reykjavik, Iceland</h3>
-                        <p class="text-sm text-gray-300">A geothermal wonderland of volcanoes, glaciers, and breathtaking landscapes.</p>
-                    </div>
-                </div>
-
-                <!-- Card 30 -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-                    <img src="./des/florence.avif" alt="Florence" class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-                    <div class="absolute bottom-0 p-6 z-10 w-full">
-                        <h3 class="text-2xl font-bold mb-2">Florence, Italy</h3>
-                        <p class="text-sm text-gray-300">The heart of the Renaissance, home to priceless art and beautiful architecture.</p>
-                    </div>
-                </div>
-
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/paris.avif"
+              alt="Paris"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Paris, France</h3>
+              <p class="text-sm text-gray-300">
+                The city of lights, known for its romantic ambiance, iconic
+                landmarks, and world-class cuisine.
+              </p>
             </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/london.avif"
+              alt="London"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">London, UK</h3>
+              <p class="text-sm text-gray-300">
+                A vibrant metropolis rich with history, art, and a royal
+                heritage that captivates every visitor.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/tokyo.avif"
+              alt="Tokyo"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Tokyo, Japan</h3>
+              <p class="text-sm text-gray-300">
+                A dazzling city where ancient tradition meets futuristic
+                technology in a unique blend of culture.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/rome.avif"
+              alt="Rome"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Rome, Italy</h3>
+              <p class="text-sm text-gray-300">
+                The Eternal City, an open-air museum filled with ancient ruins,
+                masterful art, and delicious food.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/dubai.avif"
+              alt="Dubai"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Dubai, UAE</h3>
+              <p class="text-sm text-gray-300">
+                A futuristic desert oasis known for its luxury shopping,
+                stunning architecture, and vibrant nightlife.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/newyork.avif"
+              alt="New York"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">New York, USA</h3>
+              <p class="text-sm text-gray-300">
+                The city that never sleeps, offering iconic landmarks, diverse
+                cultures, and endless entertainment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/istanbul.avif"
+              alt="Istanbul"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Istanbul, Turkey</h3>
+              <p class="text-sm text-gray-300">
+                Where East meets West, a city rich with history, magnificent
+                mosques, and bustling markets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/barca.avif"
+              alt="Barcelona"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Barcelona, Spain</h3>
+              <p class="text-sm text-gray-300">
+                A vibrant city of stunning Gaudi architecture, delicious tapas,
+                and lively street life.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/singapore.avif"
+              alt="Singapore"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Singapore</h3>
+              <p class="text-sm text-gray-300">
+                A futuristic cityscape and lush gardens, combining modern
+                innovation with rich multicultural heritage.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/hong.avif"
+              alt="Hong Kong"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Hong Kong</h3>
+              <p class="text-sm text-gray-300">
+                A vibrant hub where towering skyscrapers meet lush, green
+                mountains and ancient traditions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 11 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/amsterdam.avif"
+              alt="Amsterdam"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Amsterdam, Netherlands</h3>
+              <p class="text-sm text-gray-300">
+                A charming city of picturesque canals, historic houses, and
+                world-class art museums.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 12 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/sydney.avif"
+              alt="Sydney"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Sydney, Australia</h3>
+              <p class="text-sm text-gray-300">
+                A sun-drenched city with iconic harbor views, stunning beaches,
+                and a relaxed, outdoor lifestyle.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 13 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/bangkok.avif"
+              alt="Bangkok"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Bangkok, Thailand</h3>
+              <p class="text-sm text-gray-300">
+                A city of dazzling temples, bustling street life, and vibrant
+                floating markets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 14 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/seoul.avif"
+              alt="Seoul"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Seoul, South Korea</h3>
+              <p class="text-sm text-gray-300">
+                A dynamic city where ancient palaces and temples stand alongside
+                high-tech urban design.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 15 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/buenos.avif"
+              alt="Buenos Aires"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Buenos Aires, Argentina</h3>
+              <p class="text-sm text-gray-300">
+                A city with a passionate soul, famous for its tango rhythms,
+                colorful neighborhoods, and European flair.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 16 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/rio.avif"
+              alt="Rio de Janeiro"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Rio de Janeiro, Brazil</h3>
+              <p class="text-sm text-gray-300">
+                Home to world-famous beaches, vibrant carnival celebrations, and
+                the iconic Christ the Redeemer statue.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 17 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/cairo.avif"
+              alt="Cairo"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Cairo, Egypt</h3>
+              <p class="text-sm text-gray-300">
+                A city of ancient wonders, where the bustling modern life sits
+                alongside the timeless Sphinx and Pyramids.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 18 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/venice.avif"
+              alt="Venice"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Venice, Italy</h3>
+              <p class="text-sm text-gray-300">
+                A breathtaking city built on water, famous for its romantic
+                canals, grand palaces, and enchanting gondola rides.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 19 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/kyoto.avif"
+              alt="Kyoto"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Kyoto, Japan</h3>
+              <p class="text-sm text-gray-300">
+                Japan's cultural heart, with ancient temples, serene gardens,
+                and traditional geishas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 20 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/prague.avif"
+              alt="Prague"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Prague, Czech Republic</h3>
+              <p class="text-sm text-gray-300">
+                A city of fairy-tale castles, charming bridges, and a rich
+                history that unfolds on every cobblestone street.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 21 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/vienna.avif"
+              alt="Vienna"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Vienna, Austria</h3>
+              <p class="text-sm text-gray-300">
+                A city of imperial grandeur, classical music, and magnificent
+                palaces.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 22 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/athens.avif"
+              alt="Athens"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Athens, Greece</h3>
+              <p class="text-sm text-gray-300">
+                The cradle of Western civilization, with ancient monuments and a
+                bustling modern life.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 23 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/mexico.avif"
+              alt="Mexico City"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Mexico City, Mexico</h3>
+              <p class="text-sm text-gray-300">
+                A vibrant megalopolis full of historical depth, incredible art,
+                and delicious street food.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 24 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/lisbon.avif"
+              alt="Lisbon"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Lisbon, Portugal</h3>
+              <p class="text-sm text-gray-300">
+                A coastal city with a mix of old-world charm, modern culture,
+                and stunning views.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 25 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/marakesh.avif"
+              alt="Marrakesh"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Marrakesh, Morocco</h3>
+              <p class="text-sm text-gray-300">
+                A city of vibrant souks, serene riads, and a rich tapestry of
+                colors and sounds.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 26 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/cape.avif"
+              alt="Cape Town"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Cape Town, South Africa</h3>
+              <p class="text-sm text-gray-300">
+                A stunning coastal city set against the backdrop of majestic
+                Table Mountain.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 27 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/macchu.avif"
+              alt="Machu Picchu"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Machu Picchu, Peru</h3>
+              <p class="text-sm text-gray-300">
+                The ancient Inca citadel nestled high in the Andes Mountains, a
+                true wonder of the world.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 28 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/bali.avif"
+              alt="Bali"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Bali, Indonesia</h3>
+              <p class="text-sm text-gray-300">
+                A tropical paradise known for its volcanic mountains, iconic
+                rice paddies, beaches, and coral reefs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 29 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/rey.avif"
+              alt="Reykjavik"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Reykjavik, Iceland</h3>
+              <p class="text-sm text-gray-300">
+                A geothermal wonderland of volcanoes, glaciers, and breathtaking
+                landscapes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 30 -->
+          <div
+            class="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+          >
+            <img
+              src="./des/florence.avif"
+              alt="Florence"
+              class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 z-10 w-full">
+              <h3 class="text-2xl font-bold mb-2">Florence, Italy</h3>
+              <p class="text-sm text-gray-300">
+                The heart of the Renaissance, home to priceless art and
+                beautiful architecture.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-950 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
-                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left font-['Poppins']">
-                    <h3 class="text-3xl font-bold text-[#efba0df9] mb-2 font-['Qandile']">Vagabond</h3>
-                    <p class="text-sm text-gray-400 mb-4">The World is yours to <a href="/clnav.html" class="text-amber-100">Explore</a>.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/ayush-awasthi-dev/" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/otakuayush/" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://x.com/otakuayush_" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="https://github.com/AyushAwasthi26" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex-1 text-center md:text-left">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0"
+        >
+          <div
+            class="flex-1 flex flex-col items-center md:items-start text-center md:text-left font-['Poppins']"
+          >
+            <h3
+              class="text-3xl font-bold text-[#efba0df9] mb-2 font-['Qandile']"
+            >
+              Vagabond
+            </h3>
+            <p class="text-sm text-gray-400 mb-4">
+              The World is yours to
+              <a href="/clnav.html" class="text-amber-100">Explore</a>.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.linkedin.com/in/ayush-awasthi-dev/"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/otakuayush/"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="https://x.com/otakuayush_"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="https://github.com/AyushAwasthi26"
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-github text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <div class="flex-1 text-center md:text-left">
                     <h4 class="text-lg font-semibold mb-4 text-amber-200 font-['Poppins']">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors duration-300">Home</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300">Destinations</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300">Travel Packages</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300">Gallery</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="./landing.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="./destination.html" class="hover:text-white transition-colors duration-300">Destinations</a></li>
+                        <li><a href="./clnav.html" class="hover:text-white transition-colors duration-300">Start</a></li>
+                        <li><a href="./reviews.html" class="hover:text-white transition-colors duration-300">Reviews</a></li>
+                        <li><a href="./contact.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
                     </ul>
                 </div>
-                <div class="flex-1 text-center md:text-left">
-                    <h4 class="text-lg font-semibold mb-4 text-amber-200 font-['Poppins']">Get in Touch</h4>
-                    <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>Panki, Kanpur Nagar, 208020</p>
-                        <p><i class="fas fa-envelope mr-2 text-gray-500"></i>ayushawasthi382@gmail.com</p>
-                        <p><i class="fas fa-phone-alt mr-2 text-gray-500"></i>+91 75182 39341</p>
-                    </div>
-                </div>
+          <div class="flex-1 text-center md:text-left">
+            <h4
+              class="text-lg font-semibold mb-4 text-amber-200 font-['Poppins']"
+            >
+              Get in Touch
+            </h4>
+            <div class="space-y-2 text-gray-400">
+              <p>
+                <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>Panki,
+                Kanpur Nagar, 208020
+              </p>
+              <p>
+                <i class="fas fa-envelope mr-2 text-gray-500"></i
+                >ayushawasthi382@gmail.com
+              </p>
+              <p>
+                <i class="fas fa-phone-alt mr-2 text-gray-500"></i>+91 75182
+                39341
+              </p>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
-                <p class="text-sm text-amber-100">&copy; 2025 Vagabond. All rights reserved.</p>
-            </div>
+          </div>
         </div>
+        <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+          <p class="text-sm text-amber-100">
+            &copy; 2025 Vagabond. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

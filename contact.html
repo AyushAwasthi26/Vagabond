@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vagabond - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        /* General body and font styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Font faces from your provided files */
+        @font-face {
+            font-family: "Qandile";
+            src: url("./Qandile/Qandile.otf") format("opentype"),
+                 url("./Qandile/Qandile.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Nav Bar from your provided files */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 12px 24px;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        nav:hover {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .nav-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transition: left 0.6s;
+        }
+        .nav-item:hover::before {
+            left: 100%;
+        }
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        }
+        .nav-item.active {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.3);
+        }
+        .nav-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            opacity: 0.8;
+        }
+        
+        /* Shimmer Keyframes from your provided files */
+        @keyframes subtle-shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="/landing.html" class="nav-item">
+                <span class="nav-icon"><i class="fas fa-home"></i></span>
+                Home
+            </a>
+            <a href="/destination.html" class="nav-item">
+                <span class="nav-icon"><i class="fas fa-map-marked-alt"></i></span>
+                Destinations
+            </a>
+            <a href="/clnav.html" class="nav-item">
+                <span class="nav-icon"><i class="fas fa-plane"></i></span>
+                Start
+            </a>
+            <a href="/reviews.html" class="nav-item">
+                <span class="nav-icon"><i class="fas fa-star"></i></span>
+                Reviews
+            </a>
+            <a href="/contact.html" class="nav-item active">
+                <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                About Us
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="h-[900px] w-full bg-[url('ab-bg2.jpg')] bg-cover bg-center relative flex items-center justify-center pt-24">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="text-white text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-medium font-['Qandile'] text-[#75a1df] filter drop-shadow-md pb-8">
+                The Architects of Your Adventure
+            </h1>
+            <p class="text-2xl md:text-4xl text-[#A9B2C4] mt-2 font-[Poppins]">
+                Meet the minds behind the platform
+            </p>
+        </div>
+    </div>
+
+    <!-- What is Vagabond Section -->
+    <section class="py-16 bg-black text-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-5xl font-medium text-center mb-8 font-['Qandile'] text-[#efba0df9]">
+                What is Vagabond?
+            </h2>
+            <p class="text-lg text-gray-300 text-center leading-relaxed">
+                Vagabond is more than just a travel site; it's a recommendation system designed to find your perfect journey. It takes your personal preferences—your desired travel style, budget, and activities—and processes them to find the ideal destinations and itineraries for you. Our goal is to take the stress out of planning and give you top-tier recommendations that are perfectly suited to your tastes.
+            </p>
+        </div>
+    </section>
+
+    <!-- About Our Team Section -->
+    <section class="py-16 bg-gray-950 text-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-5xl font-medium text-center mb-12 font-['Qandile'] text-[#efba0df9]">
+                About Our Team
+            </h2>
+            <p class="text-lg text-gray-300 text-center leading-relaxed mb-12">
+                We are a passionate team of engineering students currently in our 3rd year of B.Tech. Our love for travel and technology inspired us to create Vagabond, a platform that combines our technical skills with our desire to help others explore the world. We believe everyone deserves a personalized adventure.
+            </p>
+
+            <!-- Team Member Cards -->
+            <div class="flex flex-col space-y-8">
+                
+                <!-- Team Member 1 (Ayush Awasthi) -->
+                <div class="relative flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-gray-800 rounded-lg shadow-xl transition-all duration-300 hover:scale-[1.03] hover:bg-gray-700">
+                    <img src="/team/Ayush-professional.png" alt="Ayush Awasthi" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover">
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold font-['Qandile'] text-amber-200 filter drop-shadow-md">Ayush Awasthi</h3>
+                        <p class="text-sm text-gray-400">UI/UX Designer & Frontend Developer</p>
+                        <p class="mt-2 text-gray-300 italic">I sculpt the digital canvas of Vagabond, crafting the elegant and seamless user experience that serves as the heart of our platform's visual identity.</p>
+                        <div class="flex space-x-4 mt-4 justify-center md:justify-start">
+                             <a href="https://www.linkedin.com/in/ayush-awasthi-dev/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://github.com/AyushAwasthi26" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://x.com/otakuayush_" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 (Atharva Dubey) -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-gray-800 rounded-lg shadow-xl transition-all duration-300 hover:scale-[1.02] hover:bg-gray-700">
+                    <img src="/team/atharva.jpeg" alt="Atharva Dubey" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover">
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold font-['Qandile'] text-[#efba0df9]">Atharva Dubey</h3>
+                        <p class="text-sm text-gray-400">ML + Backend Developer</p>
+                        <p class="mt-2 text-gray-300 italic">"I focus on the intelligent core, developing the machine learning models and backend systems that power our recommendations."</p>
+                        <div class="flex space-x-4 mt-4 justify-center md:justify-start">
+                            <a href="https://www.linkedin.com/in/atharva-dubey-068258330/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://github.com/AtharvaDubey25" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 (Ashish Shukla) -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-gray-800 rounded-lg shadow-xl transition-all duration-300 hover:scale-[1.02] hover:bg-gray-700">
+                    <img src="/team/ashish.jpg" alt="Ashish Shukla" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover">
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold font-['Qandile'] text-[#efba0df9]">Ashish Shukla</h3>
+                        <p class="text-sm text-gray-400">ML Engineer</p>
+                        <p class="mt-2 text-gray-300 italic">"My expertise lies in fine-tuning the machine learning models to provide accurate and unique travel suggestions for every user."</p>
+                        <div class="flex space-x-4 mt-4 justify-center md:justify-start">
+                            <a href="https://www.linkedin.com/in/ashish-shukla-7425avr/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://github.com/ashishukla12" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 (Anushka Srivastava) -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-gray-800 rounded-lg shadow-xl transition-all duration-300 hover:scale-[1.02] hover:bg-gray-700">
+                    <img src="/team/anushka.jpeg" alt="Anushka Srivastava" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover">
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold font-['Qandile'] text-[#efba0df9]">Anushka Srivastava</h3>
+                        <p class="text-sm text-gray-400">Frontend Developer</p>
+                        <p class="mt-2 text-gray-300 italic">"I'm dedicated to translating our ideas into a seamless, beautiful, and intuitive interface that inspires travel."</p>
+                        <div class="flex space-x-4 mt-4 justify-center md:justify-start">
+                            <a href="https://www.linkedin.com/in/anushka-srivastava-530a68208/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 (Anubhav) -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-gray-800 rounded-lg shadow-xl transition-all duration-300 hover:scale-[1.02] hover:bg-gray-700">
+                    <img src="/team/anubhav.jpeg" alt="Anubhav" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover">
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold font-['Qandile'] text-[#efba0df9]">Anubhav Singh Chauhan</h3>
+                        <p class="text-sm text-gray-400">Backend Developer</p>
+                        <p class="mt-2 text-gray-300 italic">"I build the robust backend systems that ensure our platform is reliable and efficient for every user, no matter where they are."</p>
+                        <div class="flex space-x-4 mt-4 justify-center md:justify-start">
+                            <a href="https://www.linkedin.com/in/anubhav-singh-chauhan-55a65232b/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
+
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left font-['Poppins']">
+                    <h3 class="text-3xl font-bold text-[#efba0df9] mb-2 font-['Qandile']">Vagabond</h3>
+                    <p class="text-sm text-gray-400 mb-4">The World is yours to <a href="/clnav.html" class="text-amber-100">Explore</a>.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/ayush-awasthi-dev/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/otakuayush/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://x.com/otakuayush_" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://github.com/AyushAwasthi26" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 text-center md:text-left">
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200 font-['Poppins']">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="./landing.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="./destination.html" class="hover:text-white transition-colors duration-300">Destinations</a></li>
+                        <li><a href="./clnav.html" class="hover:text-white transition-colors duration-300">Start</a></li>
+                        <li><a href="./reviews.html" class="hover:text-white transition-colors duration-300">Reviews</a></li>
+                        <li><a href="./contact.html" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex-1 text-center md:text-left">
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200 font-['Poppins']">Get in Touch</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>Panki, Kanpur Nagar, 208020</p>
+                        <p><i class="fas fa-envelope mr-2 text-gray-500"></i>ayushawasthi382@gmail.com</p>
+                        <p><i class="fas fa-phone-alt mr-2 text-gray-500"></i>+91 75182 39341</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-amber-100">&copy; 2025 Vagabond. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

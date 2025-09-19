@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/output.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        /* Use a dark background to match the site's body */
+        background-color: #000;
+        color: #fff;
+        /* The image from your previous request */
+        background-image: url("./login-bg-img.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* Custom Qandile font from your provided files */
+      @font-face {
+        font-family: "Qandile";
+        src: url("./Qandile/Qandile.otf") format("opentype"),
+          url("./Qandile/Qandile.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body class="flex pl-[10vh] items-center justify-start min-h-screen">
+    <div
+      class="p-12 max-w-xl max-h-h h-auto w-[70vw] text-white rounded-2xl shadow-xl backdrop-blur-sm bg-white/5 border border-white/10 -tracking-wider transition-transform duration-300 hover:-translate-y-1.5 hover:scale-105 hover:bg-amber-100/15 login-box-glow"
+    >
+      <div class="text-center mb-6">
+        <h2
+          class="text-4xl font-medium font-['Qandile'] text-[#efba0df9] filter drop-shadow-md"
+        >
+          Login to your account
+        </h2>
+        <p class="mt-2 text-md font-poppins">
+          Enter your email below to log in to your account
+        </p>
+      </div>
+
+      <form class="flex flex-col gap-6">
+        <div class="grid gap-3">
+          <label
+            for="email"
+            class="text-[#efba0df9] text-2xl font-medium font-['poppins']"
+            >Email</label
+          >
+          <input
+            id="email"
+            type="email"
+            placeholder="u@example.com"
+            required
+            class="w-full p-3 rounded-lg bg-white/5 backdrop-blur-sm text-[#efba0df9] text-lg placeholder-[#efba0df9] border border-amber-200 focus:outline-amber-300 focus:ring-2 focus:ring-[#efba0df9] transition-colors duration-300"
+          />
+        </div>
+
+        <div class="grid gap-3">
+          <div class="flex items-center">
+            <label
+              for="password"
+              class="text-[#efba0df9] text-2xl font-medium font-['Poppins']"
+              >Password</label
+            >
+            <a
+              href="#"
+              class="ml-auto inline-block text-lg text-amber-200 underline-offset-4 hover:underline transition-colors duration-300"
+            >
+              Forgot your password?
+            </a>
+          </div>
+          <input
+            id="password"
+            type="password"
+            required
+            class="w-full p-3 rounded-lg bg-white/5 backdrop-blur-sm text-[#efba0df9] placeholder-[#efba0df9] border border-amber-200 focus:outline-amber-300 focus:ring-2 focus:ring-[#efba0df9] transition-colors duration-300"
+          />
+        </div>
+
+        <div class="flex flex-col gap-3 mt-2">
+          <button
+            type="submit"
+            class="w-full py-3 rounded-full font-semibold border ring-2 ring-amber-300 border-amber-200 bg-amber-100/70 bg- text-gray-800 hover:bg-amber-200 focus:outline-none focus:outline-amber-300 focus:ring-2 focus:ring-amber-500 transition-colors flex items-center justify-center space-x-3 duration-300"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="w-full py-3 rounded-full font-semibold border ring-2 ring-amber-300 border-amber-200 bg-amber-100/70 bg- text-gray-800 hover:bg-amber-200 focus:outline-none focus:outline-amber-300 focus:ring-2 focus:ring-amber-500 transition-colors flex items-center justify-center space-x-3 duration-300"
+          >
+            <img
+              src="./Google__G__logo.svg.png"
+              alt="Google Icon"
+              class="h-6 w-6"
+            />
+            <span>Sign in with Google</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-8 text-center text-shadow-md">
+        Don&apos;t have an account?
+        <a href="#" class="underline underline-offset-4 text-amber-200">
+          Sign up
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
